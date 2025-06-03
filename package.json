@@ -8,21 +8,12 @@
 		"vscode": "^1.54.0"
 	},
 	"license": "BSD-3-Clause",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/fox-land/vscode-hyperupcall"
-	},
-	"bugs": {
-		"url": "https://github.com/fox-land/vscode-hyperupcall/issues"
-	},
-	"author": {
-		"name": "Edwin Kofler",
-		"url": "https://edwinkofler.com"
-	},
 	"categories": [],
 	"scripts": {
 		"watch": "tsc -w -p ./",
-		"build": "tsc -p ./"
+		"build": "tsc -p ./",
+		"format": "hyperupcall-scripts-nodejs format",
+		"lint": "hyperupcall-scripts-nodejs lint"
 	},
 	"icon": "assets/icon.jpg",
 	"contributes": {
@@ -114,15 +105,17 @@
 		}
 	},
 	"devDependencies": {
-		"@hyperupcall/eslint-config": "^0.3.0",
-		"@hyperupcall/prettier-config": "^0.6.0",
-		"@types/mocha": "^9.1.1",
-		"@types/node": "^20.4.5",
-		"@types/vscode": "1.54.0",
-		"eslint": "^8.18.0",
-		"prettier": "^3.0.0",
-		"typescript": "^5.1.6",
-		"ovsx": "^0.8.2",
-		"@vscode/vsce": "^2.20.0"
-	}
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^22.15.29",
+		"@types/vscode": "1.100.0",
+		"typescript": "^5.8.3",
+		"ovsx": "^0.10.3",
+		"@vscode/vsce": "^3.4.2",
+		"@hyperupcall/scripts-nodejs": "0.5.0"
+	},
+	"markdownlint-cli2": {
+		"extends": "./node_modules/@hyperupcall/markdownlint-config/.markdownlint.json"
+	},
+	"prettier": "@hyperupcall/scripts-nodejs/config-prettier.js",
+	"private": true
 }
